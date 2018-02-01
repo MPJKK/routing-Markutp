@@ -1,18 +1,33 @@
 
 
 <article *ngFor="let pysakki of tiedot">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h1>Pysäkin nimi</h1>
+                <p>{{pysakki.name}} {{pysakki.code}}</p>
 
+            </mat-panel-title>
+            <mat-panel-description>
+                This is a summary of the content
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <p>Poista tää</p>
     <div fxLayout="row">
         <div fxFlex="">
 <ul>
-    <li *ngFor="let stoppi of pysakki.patterns">
-        <p>
-            Pysäkin nimi</p>
-        <h1>{{stoppi.name}}</h1>
-        <p><span [class]="stoppi.directionId | piippu"> {{stoppi.directionId | routeDirection}}{{stoppi.route.longName}}</span></p>
-        <p>{{stoppi.route.shortName}}</p>
-        <h1>{{ stoppi.name }}kartalla</h1>
-    </li>
+    <mat-list *ngFor="let stoppi of pysakki.patterns">
+
+        <mat-list-item>{{stoppi.name}}
+        <span [class]="stoppi.directionId | piippu">
+            <mat-icon class="material-icons">{{stoppi.directionId | routeDirection}}</mat-icon>
+        </span>
+        &nbsp;
+        </mat-list-item>
+        <mat-list-item>{{stoppi.route.shortName}}{{stoppi.route.longName}}</mat-list-item>
+        <mat-list-item>{{ stoppi.name }}kartalla</mat-list-item>
+    </mat-list>
 
 </ul>
         </div>
@@ -22,6 +37,8 @@
     </agm-map>
         </div>
     </div>
+
+    </mat-expansion-panel>
 </article>
 
 

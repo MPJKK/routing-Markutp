@@ -7,9 +7,9 @@ export class RouteDirectionPipe implements PipeTransform {
 
     transform(value: any, args?: any): any {
         if (value === 0) {
-            return 'Going to';
+            return 'flight_takeoff';
         } else {
-            return 'Coming from';
+            return 'flight_land';
 
         }
     }

@@ -15,7 +15,7 @@ import {RouteDirectionPipe} from './pipes/route-direction.pipe';
 import {PiippuPipe} from './pipes/piippu.pipe';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {MatButtonModule, MatInputModule, MatTabsModule} from '@angular/material';
+import {MatButtonModule, MatExpansionModule, MatIconModule, MatInputModule, MatListModule, MatTabsModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material';
 
 @NgModule({
@@ -41,7 +41,10 @@ import {MatFormFieldModule} from '@angular/material';
         }),
         MatFormFieldModule,
         MatInputModule,
-        MatButtonModule
+        MatButtonModule,
+        MatExpansionModule,
+        MatListModule,
+        MatIconModule
     ],
     providers: [DigitransitService],
     bootstrap: [AppComponent]
