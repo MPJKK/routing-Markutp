@@ -1,0 +1,27 @@
+
+
+<article *ngFor="let pysakki of tiedot">
+
+    <div fxLayout="row">
+        <div fxFlex="">
+<ul>
+    <li *ngFor="let stoppi of pysakki.patterns">
+        <p>
+            Pysäkin nimi</p>
+        <h1>{{stoppi.name}}</h1>
+        <p><span [class]="stoppi.directionId | piippu"> {{stoppi.directionId | routeDirection}}{{stoppi.route.longName}}</span></p>
+        <p>{{stoppi.route.shortName}}</p>
+        <h1>{{ stoppi.name }}kartalla</h1>
+    </li>
+
+</ul>
+        </div>
+        <div fxFlex="">
+    <agm-map [latitude]="pysakki.lat" [longitude]="pysakki.lon" [zoom]="15" >
+        <agm-marker [latitude]="pysakki.lat" [longitude]="pysakki.lon"></agm-marker>
+    </agm-map>
+        </div>
+    </div>
+</article>
+
+
